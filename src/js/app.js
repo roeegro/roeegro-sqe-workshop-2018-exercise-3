@@ -1,10 +1,16 @@
 import $ from 'jquery';
-import {parseCode} from './code-analyzer';
+import {transform_code_to_graph} from './code-analyzer';
+
+import * as d3graphviz from 'd3-graphviz';
 
 $(document).ready(function () {
     $('#codeSubmissionButton').click(() => {
         let codeToParse = $('#codePlaceholder').val();
-        let parsedCode = parseCode(codeToParse);
-        $('#parsedCode').val(JSON.stringify(parsedCode, null, 2));
+        let args = $('#argumentsPlaceHolder').val();
+        let toPrint = transform_code_to_graph(codeToParse , args);
+        console.log(toPrint);
+        let str = '';
+        toPrint.forEach ((line) => line !== ''? str = str + '\n' + line : line );
+        d3graphviz.graphviz('#this').renderDot(str);
     });
 });

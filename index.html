@@ -13,6 +13,10 @@
                 width: 100%;
                 height: 80vh;
             }
+            .textAreaWrapper1 {
+                width: 40%;
+                height: 20vh;
+            }
 
             textarea {
                 width: 80%;
@@ -28,11 +32,6 @@
                         <label>Enter code here</label>
                     </div>
                 </td>
-                <td>
-                    <div>
-                        <label>Parsed code here</label>
-                    </div>
-                </td>
             </tr>
             <tr>
                 <td>
@@ -41,8 +40,11 @@
                     </div>
                 </td>
                 <td>
-                    <div class="textAreaWrapper">
-                        <textarea id="parsedCode" title="Parse code"></textarea>
+                    <div>
+                        <label>Enter arguments here seperated by , char</label>
+                    </div>
+                    <div class="textAreaWrapper1">
+                        <textarea id="argumentsPlaceHolder" title="Enter arguments here seperated by , char"></textarea>
                     </div>
                 </td>
             </tr>
@@ -56,7 +58,9 @@
                 </td>
             </tr>
         </table>
+        <div id = "this"  >
 
+        </div>
         <script src="dist/bundle.js"></script>
     </body>
 </html>
