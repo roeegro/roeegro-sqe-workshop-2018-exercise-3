@@ -8,7 +8,6 @@ $(document).ready(function () {
         let codeToParse = $('#codePlaceholder').val();
         let args = $('#argumentsPlaceHolder').val();
         let toPrint = transform_code_to_graph(codeToParse , args);
-        console.log(toPrint);
         let str = '';
         toPrint.forEach ((line) => line !== ''? str = str + '\n' + line : line );
         d3graphviz.graphviz('#this').renderDot(str);

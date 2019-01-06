@@ -21,7 +21,6 @@ const transform_code_to_graph = (codeToParse, args) => {
         return res.split('\n');
     } else {
         let map_param_with_arg = build_map(parsedCode.body[0], parseCode('[' + args + ']')); //first arg - func ast , second - ast of list of arguments.
-        console.log(map_param_with_arg);
         dot_as_code = mark_nodes(cfg[2], dot_as_code, map_param_with_arg);
         let res = 'digraph G { \n' + dot_as_code + '\n}';
         return res.split('\n');
